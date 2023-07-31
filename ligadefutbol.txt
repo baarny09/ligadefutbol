@@ -1,0 +1,63 @@
+package ligadefutbol;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+public class Ligadefutbol {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner input = new Scanner(System.in);
+        
+        // Crear un lista para almacenar los equipos
+        ArrayList<Team> teams = new ArrayList<>();
+        
+        // Pedir al usuario que introduzca la información de cada equipo
+        while (true) {
+            // Pedir al usuario que introduzca el nombre del equipo
+            System.out.println("Introduzca el nombre del equipo (o 'stop' para parar): ");
+            String nombreEquipo = input.nextLine();
+            
+        // Si el usuario introdujo 'stop', salir del bucle
+            if (nombreEquipo.equalsIgnoreCase("stop")) {
+                break;
+            }
+            
+            // Pedir al usuario que introduzca el número de partidos ganados
+            System.out.println("Introduce el número de partidos ganados: ");
+            int partidosGanados = input.nextInt();
+            
+            // Pedir al usuario que introduzca el número de juegos empatados
+            System.out.println("Introduzca el número de partidas empatados: ");
+            int partidosEmpatados = input.nextInt();
+            
+            // Pedir al usuario que introduzca el número de partidos perdidos
+            System.out.println("Introduce el número de partidos perdidos: ");
+            int partidosperdidos = input.nextInt();
+            
+            // Pedir al usuario que introduzca el número de goles a favor 
+            System.out.println("Introduzca el número de goles a favor: ");
+            int golesafavor = input.nextInt();
+            
+            // Pedir al usuario que introduzca el número de goles en contra
+            System.out.println("Introduzca el número de goles en contra: ");
+            int golesencontra = input.nextInt();
+            
+            // Crea un nuevo objeto Team y añádelo a la lista
+            Team team = new Team(nombreEquipo, partidosGanados, partidosEmpatados, partidosperdidos, golesafavor, golesencontra);
+            teams.add(team);
+        }
+        // Ordenar los equipos por puntos
+        Collections.sort(teams, new Comparator<Team>() {
+            @Override
+            public int compare(Team t1, Team t2) {
+                return Integer.compare(t2.getPuntos(), t1.getPuntos());
+            }
+        }); 
+        }         
+}

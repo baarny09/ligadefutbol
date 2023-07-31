@@ -1,0 +1,63 @@
+
+package ligadefutbol;
+
+
+public class Team {
+
+    private String nombre;
+    private int partidosganados;
+    private int partidosempatados;
+    private int partidosperdidos;
+    private int golesafavor;
+    private int golesencontra;
+    public Team(String nombre, int partidosganados, int partidosempatados, int partidosperdidos, int golesafavor, int golesencontra) {
+        this.nombre = nombre;
+        this.partidosganados = partidosganados;
+        this.partidosempatados = partidosempatados;
+        this.partidosperdidos = partidosperdidos;
+        this.golesafavor = golesafavor;
+        this.golesencontra = golesencontra;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public int getPartidosganados() {
+        return partidosganados;
+    }
+    public void setPartidosganados(int partidosganados) {
+        this.partidosganados = partidosganados;
+    }
+    public int getPartidosempatadoso() {
+        return partidosempatados;
+    }
+    public void setPartidosempatados(int partidosempatados) {
+        this.partidosempatados = partidosempatados;
+    }
+    public int getPartidosperdidos() {
+        return partidosperdidos;
+    }
+    public void setPartidosperdidos(int partidosperdidos) {
+        this.partidosperdidos = partidosperdidos;
+    }
+    public int getGolesafavor() {
+        return golesafavor;
+    }
+    public void setGolesafavor(int golesafavor) {
+        this.golesafavor = golesafavor;
+    }
+    public int getGolesencontra() {
+        return golesencontra;
+    }
+    public void setGolesencontrat(int golesencontra) {
+        this.golesencontra = golesencontra;
+    }
+    public int getPuntos() {
+        return partidosganados * 3 + partidosempatados;
+    }
+    
+
+}    
+    
